@@ -5,6 +5,8 @@ call pathogen#infect()
 syntax on
 
 " Color scheme
+set t_Co=256
+" Solarized specific
 let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
@@ -36,7 +38,10 @@ set smartcase
 " Temporarily clear search hilights
 nnoremap å :noh<return><esc>
 
-" Move by screen lines instead of file line. Nice with long lines.
+" Map leader to ,
+let mapleader=","
+
+" Move by screen lines instead of file line.
 nnoremap j gj
 nnoremap k gk
 
@@ -54,11 +59,11 @@ set listchars=tab:▸—,trail:·,extends:…,nbsp:␣
 " Bash-like tab completion for vim commands
 set wildmode=longest,list,full
 
-" Hide buffers
+" Hidden buffers
 set hidden
 
 " Enable backup, set directories for swap and backup files
 " // in the end of paths means build from complete path
 set backup
 set backupdir=~/.vim/tmp/backup//
-set dir=~/.vim/tmp/swap//
+
