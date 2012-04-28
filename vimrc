@@ -20,6 +20,9 @@ set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab smarttab autoindent
 set backspace=indent,eol,start
 
+" Makefiles and gitconfig require tab
+au FileType make,gitconfig setlocal noexpandtab
+
 " Show margin
 if exists('+colorcolumn')
     set colorcolumn=80
