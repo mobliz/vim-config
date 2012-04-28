@@ -69,4 +69,5 @@ set hidden
 " // in the end of paths means build from complete path
 set backup
 set backupdir=~/.vim/tmp/backup//
+set dir=~/.vim/tmp/swap//
 
