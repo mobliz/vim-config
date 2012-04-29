@@ -36,6 +36,7 @@ set hlsearch
 set incsearch
 
 " Searches are case-insensitive, unless they contain upper-case letters
+set ignorecase
 set smartcase
 
 " Temporarily clear search hilights
