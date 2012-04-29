@@ -73,9 +73,11 @@ set backupdir=~/.vim/tmp/backup//
 set dir=~/.vim/tmp/swap//
 
 " Enable persistent undo
-set undodir=~/.vim/undo//
-set undofile
-" Maximum number of changes that can be undone
-set undolevels=1000
-" maximum number lines to save for undo on a buffer reload
-set undoreload=10000
+if version >= 703
+    set undodir=~/.vim/undo//
+    set undofile
+    " Maximum number of changes that can be undone
+    set undolevels=1000
+    " Maximum number lines to save for undo on a buffer reload
+    set undoreload=10000
+endif
