@@ -3,6 +3,9 @@ call pathogen#infect()
 
 " -- General -- "
 
+" Map leader to ,
+let mapleader=","
+
 " Disable vi compatibility
 set nocompatible
 
@@ -64,9 +67,6 @@ set titlestring=%f title
 " Highlight current line
 set cursorline
 
-" Split windows below current window
-set splitbelow
-
 " -- Search -- "
 
 " Hilight searches & search incrementally
@@ -82,8 +82,8 @@ set smartcase
 " Temporarily clear search hilights
 nnoremap å :noh<return><esc>
 
-" Map leader to ,
-let mapleader=","
+" Strip all trailing whitespace in the current file
+nnoremap <leader>W mz:%s/\s\+$//<cr>:let @/=''<cr>'z
 
 " Move by screen lines instead of file line.
 nnoremap j gj
@@ -93,7 +93,7 @@ nnoremap k gk
 set pastetoggle=<F2>
 
 " Line numbers toggle
-nnoremap <F3> :set number!<CR>
+nnoremap <F3> :set number!<cr>
 
 " -- Directories -- "
 
