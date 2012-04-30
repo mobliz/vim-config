@@ -42,6 +42,10 @@ if exists('+colorcolumn')
     " Longer lines for Java
     au FileType java set colorcolumn=120
     highlight ColorColumn ctermbg=8
+else
+    " Fallback
+    au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+    au FileType java au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 endif
 
 " Show trailing whitespace characters
