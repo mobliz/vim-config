@@ -1,18 +1,13 @@
 " Pathogen (default dir = bundle)
 call pathogen#infect()
 
-" Syntax highlighting
-syntax on
-
-" Color scheme
-set t_Co=256
-" Solarized specific
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+" -- General -- "
 
 " Disable vi compatibility
 set nocompatible
+
+" Syntax highlighting
+syntax on
 
 " Indentation & backspace
 set nowrap
@@ -20,8 +15,26 @@ set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab smarttab autoindent
 set backspace=indent,eol,start
 
+" Filetype
+filetype on
+filetype plugin on
+
 " Makefiles and gitconfig require tab
 au FileType make,gitconfig setlocal noexpandtab
+
+" Bash-like tab completion for vim commands
+set wildmode=longest,list,full
+
+" Hidden buffers
+set hidden
+
+" -- Appearance -- "
+
+" Color scheme
+set t_Co=256
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
 " Show margin
 if exists('+colorcolumn')
@@ -31,6 +44,27 @@ if exists('+colorcolumn')
     highlight ColorColumn ctermbg=8
 endif
 
+" Show trailing whitespace characters
+set list
+set listchars=tab:▸—,trail:·,extends:…,nbsp:␣
+
+" Display line numbers
+set number
+
+" Improves redrawing
+set ttyfast
+
+" Display filename in window title
+set titlestring=%f title
+
+" Highlight current line
+set cursorline
+
+" Split windows below current window
+set splitbelow
+
+" -- Search -- "
+
 " Hilight searches & search incrementally
 set hlsearch
 set incsearch
@@ -38,6 +72,8 @@ set incsearch
 " Searches are case-insensitive, unless they contain upper-case letters
 set ignorecase
 set smartcase
+
+" -- Key Mappings -- "
 
 " Temporarily clear search hilights
 nnoremap å :noh<return><esc>
@@ -52,19 +88,10 @@ nnoremap k gk
 " Toggle pastemode easily in insert and command mode
 set pastetoggle=<F2>
 
-" Line numbers toggle (default on)
-set number
+" Line numbers toggle
 nnoremap <F3> :set number!<CR>
 
-" Show trailing whitespace characters
-set list
-set listchars=tab:▸—,trail:·,extends:…,nbsp:␣
-
-" Bash-like tab completion for vim commands
-set wildmode=longest,list,full
-
-" Hidden buffers
-set hidden
+" -- Directories -- "
 
 " Enable backup, set directories for swap and backup files
 " // in the end of paths means build from complete path
