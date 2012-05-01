@@ -44,7 +44,7 @@ if exists('+colorcolumn')
     set colorcolumn=80
     " Longer lines for Java
     au FileType java set colorcolumn=120
-    highlight ColorColumn ctermbg=8
+    highlight ColorColumn ctermbg=239
 else
     " Fallback
     au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
@@ -69,11 +69,14 @@ set cursorline
 
 " Statusline
 set laststatus=2
+hi StatusLine ctermbg=245 ctermfg=239
 set statusline=%F%m%r%h%w\ 
 set statusline+=%y\ 
 set statusline+=%{fugitive#statusline()}\ 
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]
+set statusline+=%=
+set statusline+=[col\ %c]
 
 " -- Search -- "
 
