@@ -67,6 +67,14 @@ set titlestring=%f title
 " Highlight current line
 set cursorline
 
+" Statusline
+set laststatus=2
+set statusline=%F%m%r%h%w\ 
+set statusline+=%y\ 
+set statusline+=%{fugitive#statusline()}\ 
+set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
+set statusline+=\ [line\ %l\/%L]
+
 " -- Search -- "
 
 " Hilight searches & search incrementally
