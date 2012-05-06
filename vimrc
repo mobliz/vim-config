@@ -34,9 +34,19 @@ set hidden
 " -- Appearance -- "
 
 " Color scheme
-let g:solarized_termcolors=256
 set background=dark
 colorscheme solarized
+
+if exists('g:colors_name') && g:colors_name == 'solarized'
+    " Highlighted text is unreadable in Terminal.app because it
+    " does not support setting of the cursor foreground color.
+    if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
+        if &background == 'dark'
+            hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=12
+        endif
+    endif
+    call togglebg#map("<F2>")
+endif
 
 " Show margin
 if exists('+colorcolumn')
