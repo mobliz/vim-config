@@ -40,12 +40,12 @@ colorscheme solarized
 if exists('g:colors_name') && g:colors_name == 'solarized'
     " Highlighted text is unreadable in Terminal.app because it
     " does not support setting of the cursor foreground color.
-    if !has('gui_running') && $TERM_PROGRAM == 'Apple_Terminal'
+    if !has('gui_running')
         if &background == 'dark'
             hi Visual term=reverse cterm=reverse ctermfg=10 ctermbg=12
         endif
     endif
-    call togglebg#map("<F2>")
+    call togglebg#map('<F4>')
 endif
 
 " Show margin
@@ -78,7 +78,7 @@ set cursorline
 
 " Statusline
 set laststatus=2
-hi StatusLine ctermbg=245 ctermfg=239
+hi StatusLine ctermbg=0 ctermfg=12
 set statusline=%F%m%r%h%w\ 
 set statusline+=%y\ 
 set statusline+=%{fugitive#statusline()}\ 
