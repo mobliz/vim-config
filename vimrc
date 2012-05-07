@@ -111,6 +111,8 @@ nnoremap k gk
 
 " Toggle pastemode easily in insert and command mode
 set pastetoggle=<F2>
+" Always disable paste mode when leaving insert mode
+au InsertLeave * set nopaste
 
 " Line numbers toggle
 nnoremap <F3> :set number!<cr>
