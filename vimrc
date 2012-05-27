@@ -9,6 +9,11 @@ let mapleader=","
 " Disable vi compatibility
 set nocompatible
 
+" Show filename in title and revert after exit
+set title
+set titleold=""
+set titlestring=VIM:\ %F
+
 " Syntax highlighting
 syntax on
 
