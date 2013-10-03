@@ -1,8 +1,7 @@
 *.swp
 .netrwhist
 .VimballRecord
-bundle/*/doc/tags
-bundle/*/doc/tags-ja
+bundle/*
 spell/*.spl
 *~
 .git/

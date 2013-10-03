@@ -1,13 +1,25 @@
-" Pathogen (default dir = bundle)
-call pathogen#infect()
+" Disable vi compatibility
+set nocompatible
+
+" -- Vundle -- "
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle bundle
+Bundle 'gmarik/vundle'
+
+" Plugins
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'jacekd/vim-iawriter'
 
 " -- General -- "
 
 " Map leader to ,
 let mapleader=","
-
-" Disable vi compatibility
-set nocompatible
 
 " Show filename in title and revert after exit
 set title
