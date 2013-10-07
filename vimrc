@@ -13,6 +13,12 @@ Bundle 'gmarik/vundle'
 " Plugins
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'dahu/Insertlessly'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tomtom/tcomment_vim'
+
+" Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jacekd/vim-iawriter'
 
