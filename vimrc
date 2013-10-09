@@ -17,6 +17,7 @@ Bundle 'dahu/Insertlessly'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tomtom/tcomment_vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
 
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
