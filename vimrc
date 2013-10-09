@@ -117,22 +117,43 @@ set smartcase
 " -- Key Mappings -- "
 
 " Temporarily clear search hilights
-nnoremap å :noh<return><esc>
+nnoremap å :noh<cr><esc>
 
 " Strip all trailing whitespace in the current file
 nnoremap <leader>W mz:%s/\s\+$//<cr>:let @/=''<cr>'z
 
-" Move by screen lines instead of file line.
-nnoremap j gj
-nnoremap k gk
-
 " Toggle pastemode easily in insert and command mode
 set pastetoggle=<F2>
+
 " Always disable paste mode when leaving insert mode
 au InsertLeave * set nopaste
 
 " Line numbers toggle
 nnoremap <F3> :set number!<cr>
+
+" Navigation keys
+
+" Move by screen lines instead of file line.
+nnoremap j gj
+nnoremap k gk
+
+" First non whitespace character
+map ö ^
+
+" End of line
+map ä $
+
+" Beginning of line
+map Ö 0
+
+" Last non space character
+map Ä g_
+
+" Same for visual mode
+vmap ö ^
+vmap ä $
+vmap Ö 0
+vmap Ä g_
 
 " -- Directories -- "
 
