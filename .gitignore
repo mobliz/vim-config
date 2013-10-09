@@ -2,6 +2,7 @@
 .netrwhist
 .VimballRecord
 bundle/*
+!bundle/.gitmodules
 !bundle/vundle
 spell/*.spl
 *~
