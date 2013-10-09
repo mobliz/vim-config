@@ -25,9 +25,6 @@ Bundle 'jacekd/vim-iawriter'
 
 " -- General -- "
 
-" Map leader to ,
-let mapleader=","
-
 " Show filename in title and revert after exit
 set title
 set titleold=""
@@ -40,14 +37,14 @@ syntax on
 set nowrap
 set tabstop=4 shiftwidth=4 softtabstop=4
 set expandtab smarttab autoindent
-set backspace=indent,eol,start
+set backspace=2
 
 " Filetype
 filetype on
 filetype plugin on
 
 " Makefiles and gitconfig require tab
-au FileType make,gitconfig setlocal noexpandtab
+ au FileType make,gitconfig setlocal noexpandtab
 
 " Bash-like tab completion for vim commands
 set wildmode=longest,list,full
@@ -96,9 +93,9 @@ set cursorline
 " Statusline
 set laststatus=2
 hi StatusLine ctermbg=0 ctermfg=10
-set statusline=%F%m%r%h%w\ 
-set statusline+=%y\ 
-set statusline+=%{fugitive#statusline()}\ 
+set statusline=%F%m%r%h%w\
+set statusline+=%y\
+set statusline+=%{fugitive#statusline()}\
 set statusline+=[%{strlen(&fenc)?&fenc:&enc}]
 set statusline+=\ [line\ %l\/%L]
 set statusline+=%=
@@ -115,6 +112,19 @@ set ignorecase
 set smartcase
 
 " -- Key Mappings -- "
+
+" Yankstack configuration
+let g:yankstack_map_keys = 0
+call yankstack#setup()
+map <C-p> <Plug>yankstack_substitute_older_paste
+map <C-n> <Plug>yankstack_substitute_newer_paste
+
+" Map leader to ,
+let mapleader=","
+
+" Map ctrlp
+let g:ctrlp_map = '<Leader>t'
+map <Leader>T :CtrlPClearAllCaches<cr>
 
 " Temporarily clear search hilights
 nnoremap å :noh<cr><esc>
