@@ -44,7 +44,7 @@ filetype on
 filetype plugin on
 
 " Makefiles and gitconfig require tab
- au FileType make,gitconfig setlocal noexpandtab
+au FileType make,gitconfig setlocal noexpandtab
 
 " Bash-like tab completion for vim commands
 set wildmode=longest,list,full
