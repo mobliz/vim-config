@@ -22,6 +22,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 " Color themes
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jacekd/vim-iawriter'
+Bundle 'morhetz/gruvbox'
 
 " -- General -- "
 
